@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' data: blob:; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'">
+<title>ATS Resume Checker — Free, No Sign-Up, Private | ResumeStow</title>
+<meta name="description" content="Free ATS resume checker. Upload your resume, paste the job description, and get an ATS readiness score with a plain-language fix list. No sign-up — your resume never leaves your device.">
+<meta name="theme-color" content="#1A365D">
+<link rel="canonical" href="https://resumestow.safwan.digital/">
+<meta property="og:title" content="ATS Resume Checker — Free, No Sign-Up, Private | ResumeStow">
+<meta property="og:description" content="Get an ATS readiness score and a plain-language fix list for your resume. Free, no sign-up, and your file never leaves your device.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://resumestow.safwan.digital/">
+<meta property="og:image" content="https://resumestow.safwan.digital/og-image.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="styles.css?v=1">
+<script>try{var _t=localStorage.getItem('resumestow-theme');if(_t==='dark'||(_t!=='light'&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.dataset.theme='dark'}catch(e){}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"ResumeStow ATS Resume Checker","url":"https://resumestow.safwan.digital/","applicationCategory":"BusinessApplication","operatingSystem":"Any (browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free ATS resume checker that runs entirely in the browser. No sign-up; files never leave the device."}
+</script>
+</head>
+<body>
+<header class="site"><div class="wrap bar">
+  <a class="logo" href="./"><img src="logo-68.png" alt="" width="34" height="34">Resume<em>Stow</em></a>
+  <nav class="main">
+    <a href="how-ats-works/">How ATS Works</a>
+    <a href="ats-resume-format/">ATS Format Guide</a>
+    <a href="about/">About</a>
+    <button class="theme-btn" id="theme" type="button" aria-label="Toggle dark mode">Dark</button>
+  </nav>
+</div></header>
+
+<main class="wrap">
+  <div class="hero">
+    <h1>Is a robot rejecting <span class="gold">your resume?</span></h1>
+    <p>Most companies filter resumes with ATS software before a human ever sees them. Check yours free: get an ATS readiness score, the missing job keywords, and a plain-language fix list.</p>
+    <div class="badges"><span>Free</span><span>No sign-up</span><span>Private — file never leaves your device</span><span>PDF &amp; DOCX</span></div>
+  </div>
+
+  <div class="card">
+    <div class="drop" id="drop" role="button" tabindex="0" aria-label="Choose your resume file">
+      <strong>Drop your resume here, or tap to choose</strong>
+      <small>PDF or DOCX, up to 10 MB. Read on this device only — nothing is uploaded.</small>
+      <div class="file-name" id="file-name"></div>
+    </div>
+    <input type="file" id="file" accept=".pdf,.docx" hidden>
+    <label class="lbl" for="jd">Job description <span style="color:var(--muted);font-weight:400">(optional — unlocks keyword matching)</span></label>
+    <textarea id="jd" placeholder="Paste the full job description for the role you are applying to…"></textarea>
+    <p class="hint">No job description? You still get a full format, sections and content health check. <a href="#" id="sample">See a sample report first</a>.</p>
+    <div class="err" id="err" role="alert"></div>
+    <button class="btn" id="run" disabled>Check my resume</button>
+  </div>
+
+  <div class="card" id="report" aria-live="polite"></div>
+
+  <section class="text">
+    <h2>Why resumes get rejected before a human sees them</h2>
+    <p>Applicant Tracking Systems (ATS) are databases with a strict reader attached. If the reader cannot pull clean text out of your file — because it is a scanned image, a two-column design, or built with tables — your profile is created empty or scrambled, and keyword searches by recruiters never find you. It is rarely your experience that fails. It is the file.</p>
+    <div class="grid">
+      <div class="tile"><h3>1. Upload</h3><p>Your resume is parsed right here in your browser, the same way an ATS would read it — text, layout and all.</p></div>
+      <div class="tile"><h3>2. Compare</h3><p>If you paste the job description, we extract its most repeated skill keywords and check which ones your resume actually uses.</p></div>
+      <div class="tile"><h3>3. Fix</h3><p>You get a score and a fix list in plain words, sorted by impact. Fix, re-check, then apply with confidence.</p></div>
+    </div>
+    <h2>Honest about what a checker can promise</h2>
+    <p>Every company's ATS is configured differently, and none of them publish their scoring. Any tool that promises you an exact "Workday score" or a guaranteed interview is guessing. ResumeStow gives you an <strong>ATS readiness estimate</strong> based on the parsing rules these systems share — readable text, single column, standard headings, and the job's own keywords used honestly. That is the part you can control, and it is the part that silently filters out qualified people every day.</p>
+  </section>
+</main>
+
+<footer class="site"><div class="wrap frow">
+  <span>ResumeStow — free ATS resume checker. A <a href="https://safwan.digital" rel="noopener">Safwan.Digital</a> tool.</span>
+  <span><a href="privacy/">Privacy</a> · <a href="https://pdfstow.safwan.digital" rel="noopener">PDFStow</a> · <a href="https://imagestow.safwan.digital" rel="noopener">ImageStow</a></span>
+</div></footer>
+
+<script src="vendor/pdf.min.js?v=1"></script>
+<script src="vendor/mammoth.browser.min.js?v=1"></script>
+<script src="engine.js?v=1"></script>
+<script src="app.js?v=1"></script>
+<script>document.getElementById('theme').addEventListener('click',function(){var h=document.documentElement;var d=h.dataset.theme!=='dark';h.dataset.theme=d?'dark':'light';this.textContent=d?'Light':'Dark';try{localStorage.setItem('resumestow-theme',h.dataset.theme)}catch(e){}});if(document.documentElement.dataset.theme==='dark')document.getElementById('theme').textContent='Light';</script>
+</body>
+</html>

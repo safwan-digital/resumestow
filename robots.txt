@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://resumestow.safwan.digital/sitemap.xml
